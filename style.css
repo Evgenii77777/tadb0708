@@ -1,0 +1,69 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}
+.custom-card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: #e9ecef;
+}
+
+.custom-toggler {
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  z-index: 1051;
+  position: relative;
+}
+.toggler-bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  min-height: 3px;
+  margin: 4px 0;
+  background: #0d6efd;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  position: relative;
+  line-height: normal;
+}
+.custom-toggler.active .toggler-bar:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+.custom-toggler.active .toggler-bar:nth-child(2) {
+  opacity: 0;
+}
+.custom-toggler.active .toggler-bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+@media (max-width: 768px) {
+  .custom-card-img {
+    height: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .custom-card-img {
+    height: 80px;
+  }
+}
